@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="GoEuro test suite">
+    <test name="Sort test">
+        <classes>
+            <class name="main.tests.WebdriverManage"/>
+        </classes>
+    </test>
+</suite>
