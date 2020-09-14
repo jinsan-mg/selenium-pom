@@ -20,6 +20,8 @@ public class SubmitOrderTest extends BaseTest {
         String password = prop.getProperty("password");
         homePage.login(user,password);
 
+        String pagetitle = getPagetitle();
+        Assert.assertEquals("pagetitle","Search item");
         String searchItem = prop.getProperty("searchItem");
         searchPage.addCart(searchItem,1);
 

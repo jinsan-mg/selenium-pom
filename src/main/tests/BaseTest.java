@@ -22,6 +22,10 @@ public class BaseTest extends TestUtils {
         driver.manage().window().maximize();
     }
 
+    public static String getPagetitle(){
+        startDriver().getTitle();
+    }
+
     public static String getUrl() {
         return prop.getProperty("url");
     }
