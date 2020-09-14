@@ -21,7 +21,7 @@ public class SubmitOrderTest extends BaseTest {
         homePage.login(user,password);
 
         String pagetitle = getPagetitle();
-        Assert.assertEquals("pagetitle","Search item");
+        Assert.assertEquals(pagetitle,"Search item");
         String searchItem = prop.getProperty("searchItem");
         searchPage.addCart(searchItem,1);
 
@@ -30,5 +30,7 @@ public class SubmitOrderTest extends BaseTest {
         String address = prop.getProperty("address");
 
         orderPage.SubmitOrder(name,mobile,address);
+        pagetitle = getPagetitle();
+        Assert.assertEquals(pagetitle,"Submit order");
     }
 }

@@ -23,7 +23,8 @@ public class BaseTest extends TestUtils {
     }
 
     public static String getPagetitle(){
-        startDriver().getTitle();
+        String pageTitle = startDriver().getTitle();
+        return pageTitle;
     }
 
     public static String getUrl() {
