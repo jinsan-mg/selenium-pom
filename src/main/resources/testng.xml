@@ -3,7 +3,7 @@
 <suite name="mysite test suite">
     <test name="order test">
         <classes>
-            <class name="main.tests.SubmitOrderTest"/>
+            <class name="main.tests.HomePageTest"/>
         </classes>
     </test>
 </suite>

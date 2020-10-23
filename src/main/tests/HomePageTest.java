@@ -7,13 +7,15 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class HomePageTest extends BaseTest {
-    WebDriver driver;
+    //WebDriver driver;
     HomePage homePage;
+
     public static Logger logger = Logger.getLogger(HomePage.class);
 
     @Test
     public void verifyLoginPage(){
-        String user = prop.getProperty("user");
+        homePage = new HomePage(driver);
+        String user = prop.getProperty("username");
         String password = prop.getProperty("password");
         homePage.login(user,password);
     }

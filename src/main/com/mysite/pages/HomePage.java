@@ -1,5 +1,6 @@
 package main.com.mysite.pages;
 
+import main.tests.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,8 +19,10 @@ public class HomePage {
     By login = By.className("btn_login");
     By invalidUserName = By.xpath("//xpath");
     By searchElement = By.xpath("xpath");
+    By searchField = By.xpath("//input[@title='Search']");
+    By searchBtn = By.xpath("//input[@name='btnK']");
 
-    public static Logger logger = Logger.getLogger(HomePage.class);
+    public Logger logger = Logger.getLogger(HomePage.class);
 
     public HomePage(WebDriver driver) {
         this.driver = driver;

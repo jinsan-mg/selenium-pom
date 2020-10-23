@@ -16,6 +16,9 @@ public class SubmitOrderTest extends BaseTest {
 
     @Test
     public void SubmitOrder(){
+        homePage = new HomePage(driver);
+        searchPage = new SearchPage(driver);
+        orderPage = new OrderPage(driver);
         String user = prop.getProperty("user");
         String password = prop.getProperty("password");
         homePage.login(user,password);

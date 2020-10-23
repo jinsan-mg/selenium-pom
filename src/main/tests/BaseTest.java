@@ -3,35 +3,36 @@ package main.tests;
 import main.com.mysite.pages.OrderPage;
 import main.com.mysite.util.TestUtils;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 public class BaseTest extends TestUtils {
+    public  WebDriver driver;
 
     @BeforeTest
-    public static WebDriver startDriver() {
-        WebDriver driver;
-        driver = new FirefoxDriver();
-        OpenBrowser(driver);
-        return driver;
+    public  void startDriver() {
+        System.setProperty("webdriver.chrome.driver","/Users/jinsgeorge/Documents/Selenium/chromedriver");
+        driver = new ChromeDriver();
+        OpenBrowser();
     }
 
-    public static void OpenBrowser(WebDriver driver) {
+    public void OpenBrowser() {
         driver.get(getUrl());
         driver.manage().window().maximize();
     }
 
-    public static String getPagetitle(){
-        String pageTitle = startDriver().getTitle();
+    public String getPagetitle(){
+        String pageTitle = driver.getTitle();
         return pageTitle;
     }
 
     public static String getUrl() {
         return prop.getProperty("url");
     }
+
     @AfterTest
-    public static void quitDriver(WebDriver driver) {
+    public  void quitDriver() {
         driver.close();
     }
 }
